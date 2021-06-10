@@ -33,7 +33,7 @@ def do_mult():
 
 @app.route("/div")
 def do_div():
-    """ Devide a and b"""
+    """ Divide a and b"""
     a = int(request.args.get("a"))
     b = int(request.args.get("b"))
     results = div(a,b)
@@ -51,6 +51,7 @@ OPERATORS = {
 
 @app.route("/math/<operator>")
 def do_math(operator):
+    """ Do math operations with a and b """
     a = int(request.args.get("a"))
     b = int(request.args.get("b"))
     results = OPERATORS[operator](a,b)
